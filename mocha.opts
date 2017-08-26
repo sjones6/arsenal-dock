@@ -1,0 +1,4 @@
+--require ./globals.js
+--recursive
+--reporter dot
+--check-leaks
