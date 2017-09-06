@@ -9,6 +9,13 @@
             "request": "launch",
             "name": "Launch Container",
             "program": "${workspaceRoot}/index.js"
+        },
+        {
+            "name": "watch:test",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/watch.js",
+            "console": "integratedTerminal"
         }
     ]
 }
