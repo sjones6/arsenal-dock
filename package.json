@@ -4,8 +4,11 @@
   "description": "A Docker container for running GunJS. Atomic building block of ArsenalIO.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test.js",
-    "watch:test": "node ./watch.js"
+    "build": "docker build -t arsenal-dock .",
+    "start:docker": "docker run --name=arsenal -i arsenal-dock:latest",
+    "start": "node arsenal-dock.js",
+    "test": "node ./node_modules/.bin/cool-runner test",
+    "watch:test": "node ./node_modules/.bin/cool-runner watch"
   },
   "repository": {
     "type": "git",
@@ -23,13 +26,11 @@
   },
   "homepage": "https://github.com/sjones6/arsenal-dock#readme",
   "dependencies": {
-    "chalk": "^2.1.0",
     "gun": "^0.8.4",
-    "gun-mongo-key": "^0.1.4",
-    "mongojs": "^2.4.1"
+    "utils": "file:local_modules/utils"
   },
   "devDependencies": {
-    "cool-runner": "^0.0.2",
+    "cool-runner": "^0.0",
     "nodemon": "^1.11.0"
   }
 }
