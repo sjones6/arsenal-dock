@@ -3,7 +3,7 @@
  * 
  * Grab the container and build it.
  */
-const Container = require('./Container');
+const Container = require('./Container.js');
 const ErrorReporter = require("./engine/errors/ErrorReporter");
 
 
