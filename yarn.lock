@@ -270,8 +270,8 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
 cool-runner@^0.0:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.5.tgz#cc2d538ccc31f3781ff6dd380381eb941649e7d9"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.6.tgz#a7d85b22713806a5ac31cee7f7b6b54883937db7"
   dependencies:
     chalk "^2.1.0"
     minimist "^1.2.0"
