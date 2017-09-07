@@ -4,6 +4,7 @@
   "description": "A Docker container for running GunJS. Atomic building block of ArsenalIO.",
   "main": "index.js",
   "scripts": {
+    "docs": "./node_modules/.bin/jsdoc -r -d docs ./src",
     "build": "docker build -t arsenal-dock .",
     "start:docker": "docker run --name=arsenal -i arsenal-dock:latest",
     "start": "node arsenal-dock.js",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "cool-runner": "^0.0",
+    "jsdoc": "^3.5.4",
     "nodemon": "^1.11.0"
   }
 }
