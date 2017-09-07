@@ -6,7 +6,7 @@ const {TestCase} = require("cool-runner");
 
 // Local
 const {rootRequire, isFunction} = require("utils");
-const Container = rootRequire('src/container');
+const Container = rootRequire('src/AppContainer');
 
 
 class ContainerTestCase extends TestCase {
