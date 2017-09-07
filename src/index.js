@@ -3,8 +3,9 @@
  * 
  * Grab the container and build it.
  */
-const Container = require('./Container.js');
-const ErrorReporter = require("./engine/errors/ErrorReporter");
+const {rootRequire} = require("utils");
+const Container = rootRequire('src/Container');
+const ErrorReporter = rootRequire("src/engine/errors/ErrorReporter");
 
 
 let app;
