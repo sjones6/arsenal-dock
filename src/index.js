@@ -3,9 +3,8 @@
  * 
  * Grab the container and build it.
  */
-const Container = require('./Container');
+const Container = require('./AppContainer');
 const ErrorReporter = require("./engine/errors/ErrorReporter");
-
 
 let app;
 

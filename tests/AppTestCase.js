@@ -7,7 +7,7 @@ const {TestCase} = require("cool-runner");
 // Local
 const {rootRequire} = require("utils");
 const app = rootRequire('src/index');
-const Container = rootRequire('src/Container');
+const Container = rootRequire('src/AppContainer');
 
 
 class ApplicationTestCase extends TestCase {
