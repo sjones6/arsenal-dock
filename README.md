@@ -53,3 +53,5 @@ Have feature requests?
 All community contributions are welcome via [GitHub](https://github.com/sjones6/arsenal-dock).
 
 Contributions must include tests and appropriate documentation.
+
+Documentation can be generated with JSDoc: `npm run docs`. Documentation will be populated in the `docs` directory.
