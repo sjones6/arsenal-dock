@@ -10,17 +10,25 @@ This application is intended to be run via Docker, but it can also be run via no
 
 The following instructions assumes you have Docker installed; if not, see [here](https://docs.docker.com/engine/installation/) for your system.
 
-## 1. Build Locally
+## Retrieve Container
 
-With Docker: 
+# 1.1. From DockerHub
+
+`docker pull sjones6/arsenal-dock`
+
+## 1.2. Build Locally
+
+First, clone this repository.
+
+Then, build with Docker: 
 
 `docker build -t arsenal-dock .`
 
-Via NPM script:
+or via NPM script:
 
 `npm run build`
 
-## 1.1 Run Container
+## 2 Run Container
 
 With Docker: 
 
