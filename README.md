@@ -20,6 +20,18 @@ Via NPM script:
 
 `npm run build`
 
+## 1.1 Run Container
+
+With Docker: 
+
+`docker run --name=arsenal -p 8080:8080 -i arsenal-dock:latest`
+
+Via NPM script:
+
+`npm run start:docker`
+
+This will start Docker, and attach port 80 on the host machine.
+
 # Issues
 
 Have issues with this container?
