@@ -90,8 +90,8 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
 aws-sdk@>=2.41.0:
-  version "2.109.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.109.0.tgz#c3d231f444108942e3816db662cb4552abaf95bb"
+  version "2.110.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.110.0.tgz#ef3a88b08e8100d984c307108e0617a56eb74fdb"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -294,9 +294,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
-cool-runner@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.2.tgz#126a46807cfacb9351b68afb1a6325944e9a2056"
+cool-runner@^0.0:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.4.tgz#eacf9b2d1d6f7a0d35c1cba7d3def75a1d24009d"
   dependencies:
     chalk "^2.1.0"
     minimist "^1.2.0"
@@ -1642,6 +1642,9 @@ url@0.10.3:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+"utils@file:local_modules/utils":
+  version "0.0.1"
 
 uuid@3.0.1, uuid@^3.0.0:
   version "3.0.1"

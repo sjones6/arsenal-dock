@@ -1,6 +1,1 @@
-require('./globals');
-const path = require('path');
-
-var container = require('./src/index');
-
-container.run();
+module.exports = require('./src/index');

@@ -14,7 +14,13 @@
             "name": "watch:test",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/watch.js",
+            "program": "${workspaceRoot}/node_modules/.bin/cool-runner",
+            "args": [
+                "watch"
+            ],
+            "env": {
+                "NODE_ENV": "TEST"
+            },
             "console": "integratedTerminal"
         }
     ]
