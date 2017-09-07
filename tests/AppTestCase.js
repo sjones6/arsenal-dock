@@ -1,13 +1,16 @@
+// Node
 const assert = require('assert');
-const app = rootRequire('src/index');
-const Container = rootRequire('src/container');
+
+// Packages
 const {TestCase} = require("cool-runner");
 
-class ApplicationTestCase extends TestCase {
-    desc() {
-        return "Application Level";
-    }
+// Local
+const {rootRequire} = require("utils");
+const app = rootRequire('src/index');
+const Container = rootRequire('src/Container');
 
+
+class ApplicationTestCase extends TestCase {
     ensureProperInstanceIsExportedTest(done) {
         assert.equal(app instanceof Container, true);
         done();

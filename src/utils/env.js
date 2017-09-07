@@ -1,3 +1,5 @@
+const {isNil} = require("utils");
+
 class Env {
     constructor() {
         this.env = process.env || {};
@@ -9,6 +11,10 @@ class Env {
 
     get(key, defaultVal) {
         return this.has(key) ? this.env[key] : defaultVal;
+    }
+
+    inTesting() {
+        return (this.get("NODE_ENV") === "TEST");
     }
 }
 
