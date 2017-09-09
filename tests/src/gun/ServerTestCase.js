@@ -8,7 +8,7 @@ const {TestCase} = require("cool-runner");
 const {rootRequire} = require("utils");
 
 // Test
-const Server = rootRequire("src/gun_server/Server");
+const Server = rootRequire("src/gun/Server");
 const Gun = require("gun/gun");
 
 class ServerTestCase extends TestCase {

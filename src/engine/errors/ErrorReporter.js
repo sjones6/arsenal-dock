@@ -3,7 +3,7 @@ const assert = require("assert");
 
 // Local
 const {rootRequire} = require("utils");
-const Env = rootRequire("src/utils/env");
+const env = rootRequire("src/utils/env");
 const ErrorDriverInterface = require("./drivers/ErrorDriverInterface");
 
 class ErrorReporter {
@@ -25,7 +25,6 @@ class ErrorReporter {
      * @static
      */
     static driver() {
-        let env = new Env();
         let driverName = env.get("ERROR_REPORTER", "console");
 
         let Driver;

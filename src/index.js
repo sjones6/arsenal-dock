@@ -12,12 +12,18 @@ let app;
 let errorReportDriver = ErrorReporter.driver();
 let reporter = new ErrorReporter(new errorReportDriver());
 
+// Create Container
+app = new Container(reporter);
+
 // Wrap the runtime in a try/catch
-try {
-    app = new Container(reporter);
-    app.bootstrap();
-} catch (err) {
-    reporter.reportUncaught(err);
-}
+setImmediate(async function() {
+    try {
+        await app.bootstrap();
+        app.run();
+    } catch (err) {
+        reporter.reportUncaught(err);
+    }
+});
+
 
 module.exports = app;

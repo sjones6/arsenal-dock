@@ -27,12 +27,16 @@
   },
   "homepage": "https://github.com/sjones6/arsenal-dock#readme",
   "dependencies": {
+    "@arsenal/http": "file:local_modules/framework/http",
+    "body-parser": "^1.18.0",
+    "finalhandler": "^1.0.4",
     "gun": "^0.8.4",
+    "router": "^1.3.1",
     "utils": "file:local_modules/utils"
   },
   "devDependencies": {
     "cool-runner": "^0.0",
     "jsdoc": "^3.5.4",
-    "nodemon": "^1.11.0"
+    "shot": "^3.4.2"
   }
 }

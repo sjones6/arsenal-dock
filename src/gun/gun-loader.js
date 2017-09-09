@@ -1,6 +1,5 @@
 const {rootRequire} = require("utils");
-const Env = rootRequire("src/utils/env");
-const env = new Env();
+const env = rootRequire("src/utils/env");
 
 const Gun = require('gun/gun');
 

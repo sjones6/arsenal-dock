@@ -8,6 +8,17 @@ class Server {
     }
 
     /**
+     * Bootstrap the Gun server
+     * 
+     * @return {Promise} A promise that resolves once the server has been bootstrapped
+     */
+    bootstrap() {
+        return new Promise(resolve => {
+            resolve();
+        });
+    }
+
+    /**
      * Start the server
      */
     main() {

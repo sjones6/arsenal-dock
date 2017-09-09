@@ -9,7 +9,7 @@ const {rootRequire, isFunction} = require("utils");
 
 // Test
 const OtherGun = require("gun/gun");
-const Gun = rootRequire("src/gun_server/gun-loader");
+const Gun = rootRequire("src/gun/gun-loader");
 
 class GunLoaderTestCase extends TestCase {
     test_that_gun_loader_returns_gun(done) {
