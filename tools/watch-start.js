@@ -22,10 +22,13 @@ const run = function() {
     // Shutdown if we've already started
     if (app) {
         app.shutdown();
+        app = null;
     }
 
     // Empty out module cache
-    require.cache = {};
+    Object.keys(require.cache).forEach(dep => {
+        delete require.cache[dep];
+    });
 
     // Grab the app and start it up.
     app = require(join(cwd, "index.js"));
