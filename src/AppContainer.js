@@ -49,7 +49,7 @@ class Container {
 
         // Wire up the API server for HTTP requests
         if (!env.inTesting()) {
-            this.httpServer.listen(parseInt(env.get("PORT", 8080)));
+            this.httpServer.listen(parseInt(env.get("PORT", 8000)));
         }
     }
 }

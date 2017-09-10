@@ -18,8 +18,11 @@ app = new Container(reporter);
 // Wrap the runtime in a try/catch
 setImmediate(async function() {
     try {
-        await app.bootstrap();
-        app.run();
+        app.bootstrap()
+            .then(() => {
+                app.run()
+            });
+        ;
     } catch (err) {
         reporter.reportUncaught(err);
     }

@@ -32,7 +32,9 @@ class HttpServer extends Event {
      */
     create(handle) {
         this._http = http.createServer((req, res) => {
-            handle(req, new Response(res), finalhandler(req, res));
+            handle(req, new Response(res), () => {
+                finalhandler(req, res);
+            });
         });
         this.emit("http_server_created", this._http);
     }
