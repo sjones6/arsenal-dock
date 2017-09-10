@@ -17,7 +17,7 @@ class API {
     bootstrap(http) {
         this._http = http;
         this._router = new Router();
-        this._router.use(bodyparser.json());
+        //this._router.use(bodyparser.json());
 
         // Register all API routes asynchronously
         return this._registerRoutes();

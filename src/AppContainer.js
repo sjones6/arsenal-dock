@@ -52,6 +52,15 @@ class Container {
             this.httpServer.listen(parseInt(env.get("PORT", 8000)));
         }
     }
+
+    /**
+     * Shut the application down
+     * 
+     * @todo shutdown gun gracefully.
+     */
+    shutdown() {
+        this.httpServer.close();
+    }
 }
 
 module.exports = Container;

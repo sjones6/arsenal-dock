@@ -15,18 +15,4 @@ let reporter = new ErrorReporter(new errorReportDriver());
 // Create Container
 app = new Container(reporter);
 
-// Wrap the runtime in a try/catch
-setImmediate(async function() {
-    try {
-        app.bootstrap()
-            .then(() => {
-                app.run()
-            });
-        ;
-    } catch (err) {
-        reporter.reportUncaught(err);
-    }
-});
-
-
 module.exports = app;

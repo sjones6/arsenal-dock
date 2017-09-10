@@ -11,6 +11,15 @@
             "program": "${workspaceRoot}/index.js"
         },
         {
+            "type": "node",
+            "request": "launch",
+            "name": "watch:start",
+            "program": "${workspaceRoot}/tools/watch-start.js",
+            "env": {
+                "PORT": 9005
+            }
+        },
+        {
             "name": "watch:test",
             "type": "node",
             "request": "launch",

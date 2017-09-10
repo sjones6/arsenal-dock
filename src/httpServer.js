@@ -32,7 +32,7 @@ class HttpServer extends Event {
      */
     create(handle) {
         this._http = http.createServer((req, res) => {
-            handle(req, new Response(res), () => {
+            handle(req, res, () => {
                 finalhandler(req, res);
             });
         });
@@ -45,7 +45,7 @@ class HttpServer extends Event {
      * @param {Number} port A port to listen on
      */
     listen(port) {
-        this._http.listen(port);
+        this._http.listen(parseInt(port));
     }
 
     /**
@@ -55,6 +55,13 @@ class HttpServer extends Event {
      */
     getServer() {
         return this._http;
+    }
+
+    close() {
+        if (this._http) {
+            this._http.close();
+        }
+        this._http = null;
     }
 }
 
