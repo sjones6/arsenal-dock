@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "cool-runner": "^0.0",
-    "jsdoc": "^3.5.4"
+    "jsdoc": "^3.5.4",
+    "supertest": "^3.0.0"
   }
 }
