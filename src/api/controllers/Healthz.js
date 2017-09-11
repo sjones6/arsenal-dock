@@ -5,13 +5,8 @@ const {Controller} = require("@arsenal/http");
  * @extends Controller
  */
 class Healthz extends Controller {
-    get(req, res) {
+    get(req, res) {        
         res.status(200);
-    }
-    post(req, res) {
-        res.json({
-            success: true
-        });
     }
 }
 

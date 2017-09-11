@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Arsenal Dock Tester File</title>
+        <script src="../node_modules/gun/gun.min.js"></script>
+
+        <!-- This simple HTML wires up a Gun instance that can connect up to the 
+        Arsenal-dock instance. -->
+        <script>
+            window.gun = new Gun("http://localhost:9005/gun");
+        </script>
+    </head>
+</html>

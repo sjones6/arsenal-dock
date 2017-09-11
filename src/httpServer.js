@@ -7,8 +7,7 @@ const finalhandler = require("finalhandler");
 
 // Local
 const env = require("./utils/env");
-
-let Response;
+const {Response} = require("@arsenal/http");
 
 /**
  * Class responsible for the application's HTTP server
@@ -17,9 +16,8 @@ let Response;
  * @extends Event
  */
 class HttpServer extends Event {
-    constructor(Res) {
+    constructor() {
         super();
-        Response = Res;
         this._http = null;
     }
 

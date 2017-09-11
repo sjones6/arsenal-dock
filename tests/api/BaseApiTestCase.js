@@ -1,5 +1,5 @@
 // Node
-const {ClientRequest, ServerResponse} = require("http");
+const {ClientRequest} = require("http");
 
 // Packages
 const {TestCase} = require("cool-runner");
@@ -27,7 +27,7 @@ class BaseApiTestCase extends TestCase {
         if (requestDefinition.payload) {
             request.body = requestDefinition.payload;
         }
-        let response = new ServerResponse(request);
+        let response = new MockResponse(request);
 
         // Todo: Why does "end" event get called multiple times? Seeing 6.
         let ended = false;
@@ -36,7 +36,7 @@ class BaseApiTestCase extends TestCase {
                 ended = true;
 
                 // end the request to avoid any errors about unclosed sockets
-                request.end();
+                //request.end();
 
                 // pass to test case handler
                 handler.call(null, response);

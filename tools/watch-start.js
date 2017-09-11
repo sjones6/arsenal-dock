@@ -6,6 +6,16 @@ const {red,greenBright} = require("chalk");
 let app;
 let starting = false;
 let last;
+
+const handleErr = function(err) {
+    starting = false;
+    console.error(red(`Error received attempting to start application: ${err.message}${err.stack}\n`));
+    console.error(red("Waiting for changes...\n"));
+}
+
+// Handle any uncaught exception
+process.on("uncaughtException", handleErr);
+
 const run = function() {
 
     // Don't restart while start in progress
@@ -39,15 +49,12 @@ const run = function() {
             .then(() => {
                 app.run();
                 starting = false;
-                console.log(greenBright(`App started; listening on ${process.env.PORT}`));
+                console.log(greenBright(`App started; listening on ${process.env.PORT}\n\n`));
             });
     } catch (err) {
-        starting = false;
-        console.error(red(`Error received attempting to start application: ${err.message}`), err.stack);
+        handleErr(err);
     }
 };
-
-run();
 
 fs.readdir(cwd, (err, files) => {
     files
@@ -59,4 +66,7 @@ fs.readdir(cwd, (err, files) => {
                 fs.watch(file, {recursive: true}, run);
             }
         });
+    
+    // Start application after watcher applied
+    run();
 });

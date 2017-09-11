@@ -3,7 +3,6 @@ const Options = require("./Options");
 
 class Server {
     constructor(httpServer) {
-        this._web = httpServer;
         this._opt = new Options(httpServer);
     }
 

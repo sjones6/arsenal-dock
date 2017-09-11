@@ -17,7 +17,8 @@
             "program": "${workspaceRoot}/tools/watch-start.js",
             "env": {
                 "PORT": 9005
-            }
+            },
+            "console": "integratedTerminal"
         },
         {
             "name": "watch:test",

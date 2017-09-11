@@ -18,26 +18,6 @@ class ErrorReporter {
     }
 
     /**
-     * Determine the report driver based upon the configuration options
-     * 
-     * @todo This class should not need to be aware of driver implementations
-     * 
-     * @static
-     */
-    static driver() {
-        let driverName = env.get("ERROR_REPORTER", "console");
-
-        let Driver;
-        switch (driverName) {
-            case "console":
-                Driver = require("./drivers/ConsoleDriver");
-        }
-
-        // finish
-        return Driver;
-    }
-
-    /**
      * Report a trapped/caught error
      * 
      * @param {Error} err 

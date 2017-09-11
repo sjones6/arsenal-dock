@@ -5,12 +5,13 @@
  */
 const Container = require('./AppContainer');
 const ErrorReporter = require("./engine/errors/ErrorReporter");
+const resolve = require("./utils/resolve");
 
 let app;
 
 // First Initialize the error reporter
-let errorReportDriver = ErrorReporter.driver();
-let reporter = new ErrorReporter(new errorReportDriver());
+let ErrorReportDriver = resolve("ERROR_REPORTER");
+let reporter = new ErrorReporter(new ErrorReportDriver());
 
 // Create Container
 app = new Container(reporter);
