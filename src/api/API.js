@@ -8,6 +8,11 @@ const bodyparser = require("body-parser");
 
 class API {
 
+    constructor() {
+        this._router = new Router();
+        this._router.use(bodyparser.json());
+    }
+
     /**
      * Bootstrap the HTTP API. At this step, build up the router with all of the
      * registered routes
@@ -16,8 +21,6 @@ class API {
      */
     bootstrap(http) {
         this._http = http;
-        this._router = new Router();
-        this._router.use(bodyparser.json());
 
         // Register all API routes asynchronously
         return this._registerRoutes();

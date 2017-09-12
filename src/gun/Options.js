@@ -3,19 +3,15 @@ const {rootRequire} = require("utils");
 const env = rootRequire("src/utils/env");
 
 class Options {
-    constructor(httpServer) {
-
-        // Listen for when the server is created
-        httpServer.on("http_server_created", web => {
-            this.web = web;
-        });
-
-        this._applyVerify();
-
-        this._applyStorageDriver()
+    constructor() {
+        this._applyStorageDriver();
     }
 
-    _applyVerify() {
+    /**
+     * @param {HttpServer} web   The HTTP server
+     */
+    setWeb(web) {
+        this.web = web;
     }
 
     _applyStorageDriver() {

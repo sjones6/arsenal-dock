@@ -3,52 +3,41 @@ const assert = require("assert");
 
 // Packages
 const {TestCase} = require("cool-runner");
-const request = require('supertest');
 
 // Local
 const {rootRequire} = require("utils");
 const app = rootRequire("src/index");
 
 /**
- * Test the healthy endpoint
+ * This is the base class for API integration tests. It wires up a server that can be
+ * passed into supertest
  * 
  * @class
  * @extends TestCase
  */
-class HealthzApiTestCase extends TestCase {
+class ApiTestCase extends TestCase {
 
     constructor() {
         super();
         this.app = null;
     }
 
-    request(done) {
-        this._prepare()
-            .then(server => {
-                done(request(server));
-            })
-            .catch(e => {
-                throw e;
-            });
+    beforeAll() {
+        return new Promise(resolve => {
+            app.bootstrap()
+                .then(() => {
+                    app.run();
+                    this.server = app.httpServer.getServer();
+                    resolve();
+                })
+                .catch(e => reject(e));
+        });
     }
 
-    _prepare() {
-        return new Promise((resolve, reject) => {
-            if (this.app) {
-                resolve(app.httpServer.getServer());
-            } else {
-                app.bootstrap()
-                    .then(() => {
-                        app.run();
-                        this.app = app;
-                        resolve(app.httpServer.getServer());
-                    })
-                    .catch(e => {
-                        throw e
-                    });
-            }
-        });
+    afterAll(done) {
+        app.shutdown();
+        done();
     }
 }
 
-module.exports = HealthzApiTestCase;
+module.exports = ApiTestCase;

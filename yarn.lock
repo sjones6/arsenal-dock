@@ -116,8 +116,8 @@ cookiejar@^2.1.0:
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.1.tgz#41ad57b1b555951ec171412a81942b1e8200d34a"
 
 cool-runner@^0.0:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.9.tgz#b75188546e8ff53d0763a99bd16064de2811d28c"
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/cool-runner/-/cool-runner-0.0.13.tgz#e56ec5182b42fe860d19e30c8f6ffe4727f8de48"
   dependencies:
     chalk "^2.1.0"
     minimist "^1.2.0"
@@ -499,6 +499,17 @@ utils-merge@1.0.0:
 uuid@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
+
+uuid@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
+
+ws@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-3.1.0.tgz#8afafecdeab46d572e5397ee880739367aa2f41c"
+  dependencies:
+    safe-buffer "~5.1.0"
+    ultron "~1.1.0"
 
 ws@~>2.2.3:
   version "2.2.3"

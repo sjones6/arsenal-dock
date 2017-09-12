@@ -1,6 +1,9 @@
 // Node
 const assert = require("assert");
 
+// Packages
+const request = require('supertest');
+
 // Test
 const ApiTestCase = require("./ApiTestCase");
 
@@ -13,13 +16,12 @@ const ApiTestCase = require("./ApiTestCase");
 class HealthzApiTestCase extends ApiTestCase {
 
     test_that_the_api_responds_with_200(done) {
-        this.request(req => {
-            req.get('/api/healthz')
-                .end(function(err, res) {
-                    assert.equal(res.status, 200);
-                    done();
-                });
-        }); 
+        request(this.server)
+            .get('/api/healthz')
+            .end(function(err, res) {
+                assert.equal(res.status, 200);
+                done();
+            });
     }
 }
 

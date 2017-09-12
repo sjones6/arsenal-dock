@@ -9,7 +9,8 @@
     "start:docker": "docker run --name=arsenal -i arsenal-dock:latest",
     "start": "node arsenal-dock.js",
     "test": "node ./node_modules/.bin/cool-runner test",
-    "watch:test": "node ./node_modules/.bin/cool-runner watch"
+    "watch:test": "node ./node_modules/.bin/cool-runner watch",
+    "watch:start": "node ./tools/watch-start.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,9 @@
     "finalhandler": "^1.0.4",
     "gun": "^0.8.4",
     "router": "^1.3.1",
-    "utils": "file:local_modules/utils"
+    "utils": "file:local_modules/utils",
+    "uuid": "^3.1.0",
+    "ws": "^3.1.0"
   },
   "devDependencies": {
     "cool-runner": "^0.0",

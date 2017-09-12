@@ -17,10 +17,11 @@ class ServerTestCase extends TestCase {
         this.server = null;
     }
 
-    beforeEach() {
+    beforeEach(done) {
         this.server = new Server({
             on: function() {}
         });
+        done();
     }
     
     test_that_the_server_instantiates_gun(done) {
