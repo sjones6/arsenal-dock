@@ -10,7 +10,6 @@ node_js:
 
 before_install:
 - npm run build
-- docker run -d -p 127.0.0.1:80:80
 - docker ps -a
 - docker run sjones6/arsenal-dock /bin/sh -c "cd /app; npm test"
 
