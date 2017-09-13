@@ -11,7 +11,7 @@ class Peer extends Event {
         this._wire = connection;
 
         connection.on("err", err => console.log(err));
-        connection.on("message", msg => this.emit("message", msg));
+        connection.on("message", msg => this._receive(msg));
     }
 
     getId() {
@@ -30,6 +30,17 @@ class Peer extends Event {
 
     canReceive() {
         return true;
+    }
+
+    /* private api */
+
+    /**
+     * @param {string} msg   The message sent from the connection 
+     */
+    _receive(msg) {
+        if (this.canReceive()) {
+            this.emit("message", msg);
+        }
     }
 }
 
