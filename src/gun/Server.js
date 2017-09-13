@@ -100,7 +100,7 @@ class Server {
 
         // Initialize a WebSocket Server
         this._wss = new WebSocketServer({
-            //noServer: env.inTesting(),
+            noServer: env.inTesting(),
             server: this.web,
             path: '/gun',
             verifyClient: this._handleConnectionAttempt.bind(this)

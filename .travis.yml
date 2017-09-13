@@ -1,10 +1,24 @@
 language: node_js
+
+sudo: required
+
+services:
+- docker
+
 node_js:
 - 8
-cache: yarn
+
 before_install:
-- npm install -g yarn
-install:
-- yarn install --pure-lockfile
+- npm run build
+- docker ps -a
+- docker run sjones6/arsenal-dock /bin/sh -c "cd /app; npm test"
+
 script:
 - npm test
+
+after_success:
+  - if [ -z "$TRAVIS_TAG" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push sjones6/arsenal-dock:$TRAVIS_TAG;
+    else
+    fi

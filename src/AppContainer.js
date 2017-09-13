@@ -2,7 +2,7 @@
 const env = require("./utils/env");
 const API = require("./api/API");
 const GunServer = require("./gun/Server");
-const HttpServer = require("./httpServer");
+const HttpServer = require("./HttpServer");
 
 /**
  * A top level architecture component responsible for wrapping the entire application
