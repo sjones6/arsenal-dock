@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "docs": "./node_modules/.bin/jsdoc -r -d docs ./src",
-    "build": "docker build -t arsenal-dock .",
-    "start:docker": "docker run --name=arsenal -i arsenal-dock:latest",
+    "build": "docker build -t sjones6/arsenal-dock .",
+    "start:docker": "docker run --name=arsenal -i sjones6/arsenal-dock:latest",
     "start": "node arsenal-dock.js",
-    "test": "node ./node_modules/.bin/cool-runner test",
+    "test": "NODE_ENV=TEST node ./node_modules/.bin/cool-runner test",
     "watch:test": "node ./node_modules/.bin/cool-runner watch",
     "watch:start": "node ./tools/watch-start.js"
   },
