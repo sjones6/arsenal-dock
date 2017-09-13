@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "./node_modules/.bin/jsdoc -r -d docs ./src",
-    "build": "docker build -t sjones6/arsenal-dock .",
+    "build": "DOCKER_BUILD_TAG=${TRAVIS_TAG:-latest}; docker build -t sjones6/arsenal-dock:$DOCKER_BUILD_TAG .",
     "start:docker": "docker run --name=arsenal -i sjones6/arsenal-dock:latest",
     "start": "node arsenal-dock.js",
     "test": "NODE_ENV=TEST node ./node_modules/.bin/cool-runner test",
